@@ -588,12 +588,6 @@ namespace WeatherApp
             panel15.BackColor = Color.FromArgb(94, 131, 186);
         }
         #endregion
-        private void split_data(string input)
-        {
-            string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            second_data = splited_input[0];
-            second_time = splited_input[1];
-        }
         
         private void label2_Click(object sender, EventArgs e)
         {
@@ -670,6 +664,48 @@ namespace WeatherApp
                 label24.Text = ((int)ow.main.pressure).ToString();
 
                 label18.Text = ow.name.ToString();
+
+                split_data(owForecast.list[0].dt_txt);
+                label61.Text = second_data;
+
+                split_data(owForecast.list[8].dt_txt);
+                label49.Text = second_data;
+
+                split_data(owForecast.list[16].dt_txt);
+                label33.Text = second_data;
+
+                split_data(owForecast.list[24].dt_txt);
+                label43.Text = second_data;
+
+                label28.Text = owForecast.list[8].wind.speed.ToString();
+
+                label58.Text = owForecast.list[8].main.humidity.ToString();
+
+                label30.Text = ((int)owForecast.list[8].main.pressure).ToString();
+
+                label45.Text = (GetMinTemp(owForecast, 8, 17)).ToString("0.##") + "℃";
+
+                label26.Text = (GetMaxTemp(owForecast, 8, 17)).ToString("0.##") + "℃";
+
+                label40.Text = owForecast.list[16].wind.speed.ToString();
+
+                label59.Text = owForecast.list[16].main.humidity.ToString();
+
+                label37.Text = ((int)owForecast.list[16].main.pressure).ToString();
+
+                label36.Text = (GetMinTemp(owForecast, 16, 25)).ToString("0.##") + "℃";
+
+                label41.Text = (GetMaxTemp(owForecast, 16, 25)).ToString("0.##") + "℃";
+
+                label55.Text = owForecast.list[24].wind.speed.ToString();
+
+                label60.Text = owForecast.list[24].main.humidity.ToString();
+
+                label52.Text = ((int)owForecast.list[24].main.pressure).ToString();
+
+                label51.Text = (GetMinTemp(owForecast, 24, 33)).ToString("0.##") + "℃";
+
+                label56.Text = (GetMaxTemp(owForecast, 24, 33)).ToString("0.##") + "℃";
             }
             catch (WebException ex)
             {
@@ -728,24 +764,69 @@ namespace WeatherApp
         /// <param name="town">Место с которого будет взята погода</param>
         private void ShowInf(string town)
         {
-            if (UrlHandler.UrlCheck(todayUrlPt1 + town + todayUrlPt3))
+            if (UrlHandler.UrlCheck(todayUrlPt1 + town + todayUrlPt3) && UrlHandler.UrlCheck(forecastUrlPt1 + town + forecastUrlPt3))
             {
                 GetInfoFromUrl.SetInf(todayUrlPt1 + town + todayUrlPt3, out owCurrent);
+
+                GetInfoFromUrl.SetInf(forecastUrlPt1 + town + forecastUrlPt3, out owForecast);
+
                 this.Invoke(new Action(() => {
                     
-                pictureBox1.Image = owCurrent.weather[0].Icon;
+                    pictureBox1.Image = owCurrent.weather[0].Icon;
 
-                label22.Text = owCurrent.weather[0].description;
+                    label22.Text = owCurrent.weather[0].description;
 
-                label21.Text = owCurrent.main.temp.ToString("0.##")+ "℃";
+                    label21.Text = owCurrent.main.temp.ToString("0.##")+ "℃";
 
-                label23.Text = owCurrent.wind.speed.ToString();
+                    label23.Text = owCurrent.wind.speed.ToString();
 
-                label32.Text = owCurrent.main.humidity.ToString();
+                    label32.Text = owCurrent.main.humidity.ToString();
 
-                label24.Text = ((int)owCurrent.main.pressure).ToString();
+                    label24.Text = ((int)owCurrent.main.pressure).ToString();
 
-                label18.Text = owCurrent.name.ToString();
+                    label18.Text = owCurrent.name.ToString();
+
+                    split_data(owForecast.list[0].dt_txt);
+                    label61.Text = second_data;
+
+                    split_data(owForecast.list[8].dt_txt);
+                    label49.Text = second_data;
+
+                    split_data(owForecast.list[16].dt_txt);
+                    label33.Text = second_data;
+
+                    split_data(owForecast.list[24].dt_txt);
+                    label43.Text = second_data;
+
+                    label28.Text = owForecast.list[8].wind.speed.ToString();
+
+                    label58.Text = owForecast.list[8].main.humidity.ToString();
+
+                    label30.Text = ((int)owForecast.list[8].main.pressure).ToString();
+
+                    label45.Text = (GetMinTemp(owForecast, 8, 17)).ToString("0.##") + "℃";
+
+                    label26.Text = (GetMaxTemp(owForecast, 8, 17)).ToString("0.##") + "℃";
+
+                    label40.Text = owForecast.list[16].wind.speed.ToString();
+
+                    label59.Text = owForecast.list[16].main.humidity.ToString();
+
+                    label37.Text = ((int)owForecast.list[16].main.pressure).ToString();
+
+                    label36.Text = (GetMinTemp(owForecast, 16, 25)).ToString("0.##") + "℃";
+
+                    label41.Text = (GetMaxTemp(owForecast, 16, 25)).ToString("0.##") + "℃";
+
+                    label55.Text = owForecast.list[24].wind.speed.ToString();
+
+                    label60.Text = owForecast.list[24].main.humidity.ToString();
+
+                    label52.Text = ((int)owForecast.list[24].main.pressure).ToString();
+
+                    label51.Text = (GetMinTemp(owForecast, 24, 33)).ToString("0.##") + "℃";
+
+                    label56.Text = (GetMaxTemp(owForecast, 24, 33)).ToString("0.##") + "℃";
                 }));
             }
             else
@@ -785,6 +866,13 @@ namespace WeatherApp
             }
         }
 
+        private void split_data(string input)
+        {
+            string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            second_data = splited_input[0];
+            second_time = splited_input[1];
+        }
+
         private void label48_MouseEnter(object sender, EventArgs e)
         {
             label48.BackColor = Color.FromArgb(94, 131, 186);
@@ -795,6 +883,30 @@ namespace WeatherApp
             label48.BackColor = Color.FromArgb(58, 78, 122);
         }
 
-       
+        private double GetMaxTemp(OpenWeatherForecast.OpenWeatherForecast ow,int start,int stop)
+        {
+            double temp = ow.list[start].main.temp;
+            for(int i = start ;i < stop; i++)
+            {
+                if (temp < ow.list[i].main.temp)
+                {
+                    temp = ow.list[i].main.temp;
+                }
+            }
+            return temp;
+        }
+        
+        private double GetMinTemp(OpenWeatherForecast.OpenWeatherForecast ow,int start, int stop)
+        {
+            double temp = ow.list[start].main.temp;
+            for (int i = start; i < stop; i++)
+            {
+                if (temp > ow.list[i].main.temp)
+                {
+                    temp = ow.list[i].main.temp;
+                }
+            }
+            return temp;
+        }
     }
 }
