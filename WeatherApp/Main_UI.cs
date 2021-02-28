@@ -20,6 +20,9 @@ namespace WeatherApp
         private static string city;
         private static string city_old;
         private static bool chart_builded = false;
+        private static string input_data;
+        private static string second_time;
+        private static string second_data;
 
         OpenWeather.OpenWeather owCurrent;
 
@@ -585,6 +588,13 @@ namespace WeatherApp
             panel15.BackColor = Color.FromArgb(94, 131, 186);
         }
         #endregion
+        private void split_data(string input)
+        {
+            string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            second_data = splited_input[0];
+            second_time = splited_input[1];
+        }
+        
         private void label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
