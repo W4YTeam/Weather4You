@@ -11,7 +11,5 @@ namespace WeatherApp.OpenWeather
         public double speed;
 
         public double deg;
-
-        public double gust;
     }
 }

@@ -14,9 +14,26 @@ namespace WeatherApp
         private static HttpWebRequest httpWebRequest;
 
         private static HttpWebResponse httpWebResponse;
-        public static OpenWeather.OpenWeather GetInf(string originUrl)
+        public static void SetInf(string originUrl, out OpenWeather.OpenWeather weather)
         {
-            httpWebRequest = (HttpWebRequest)WebRequest.Create(originUrl);
+
+            weather = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(getDataString(originUrl));
+
+        }
+        public static void SetInf(string originUrl, out OpenWeatherForecast.OpenWeatherForecast weather)
+        {
+
+            weather = JsonConvert.DeserializeObject<OpenWeatherForecast.OpenWeatherForecast>(getDataString(originUrl));
+
+        }
+        /// <summary>
+        /// Принимает строку и возвращает ответ с сервера в виде строки
+        /// </summary>
+        /// <param name="url">Запрос</param>
+        /// <returns>Ответ сервера в виде строки</returns>
+        private static string getDataString(string url)
+        {
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 
             httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 
@@ -32,9 +49,7 @@ namespace WeatherApp
 
             httpWebResponse.Close();
 
-            OpenWeather.OpenWeather inf = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(answer);
-
-            return inf;
+            return answer;
         }
     }
 }

@@ -21,22 +21,32 @@ namespace WeatherApp
         private static string city_old;
         private static bool chart_builded = false;
 
+        OpenWeather.OpenWeather owCurrent;
+
+        OpenWeatherForecast.OpenWeatherForecast owForecast;
+
         private Point lastpoint;
 
         HttpWebRequest myHttpWebRequest;
 
         HttpWebResponse myHttpWebResponse;
 
+        private static readonly string testUrl = "http://api.openweathermap.org/data/2.5/forecast?q=Kyiv&units=metric&lang=ru&appid=570c596303b3a427d268327c855a1171";
+
+        private static readonly string forecastUrlPt1 = "http://api.openweathermap.org/data/2.5/forecast?q=";
+
+        private static readonly string forecastUrlPt3 = "&units=metric&lang=ru&appid=570c596303b3a427d268327c855a1171";
+
         private static readonly string urlForStart = "http://api.openweathermap.org/data/2.5/weather?q=Kyiv&units=metric&lang=ru&appid=570c596303b3a427d268327c855a1171";
 
-        private static readonly string urlPt1 = "http://api.openweathermap.org/data/2.5/weather?q=";
+        private static readonly string todayUrlPt1 = "http://api.openweathermap.org/data/2.5/weather?q=";
 
-        private static readonly string urlPt3 = "&units=metric&lang=ru&appid=570c596303b3a427d268327c855a1171";
+        private static readonly string todayUrlPt3 = "&units=metric&lang=ru&appid=570c596303b3a427d268327c855a1171";
         public Main_UI()
         {
             InitializeComponent();
         }
-        //
+        #region Panel2 and it's components
         private void panel2_Click(object sender, EventArgs e)
         {
             panel1.BringToFront();
@@ -574,7 +584,7 @@ namespace WeatherApp
         {
             panel15.BackColor = Color.FromArgb(94, 131, 186);
         }
-
+        #endregion
         private void label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -619,6 +629,8 @@ namespace WeatherApp
 
             try
             {
+                await Task.Run(() => GetInfoFromUrl.SetInf(testUrl, out owForecast));
+
                 myHttpWebResponse = (HttpWebResponse)await myHttpWebRequest.GetResponseAsync();
 
                 string answer = string.Empty;
@@ -706,24 +718,24 @@ namespace WeatherApp
         /// <param name="town">Место с которого будет взята погода</param>
         private void ShowInf(string town)
         {
-            if (UrlHandler.UrlCheck(urlPt1 + town + urlPt3))
+            if (UrlHandler.UrlCheck(todayUrlPt1 + town + todayUrlPt3))
             {
-                OpenWeather.OpenWeather ow = GetInfoFromUrl.GetInf(urlPt1 + town + urlPt3);
+                GetInfoFromUrl.SetInf(todayUrlPt1 + town + todayUrlPt3, out owCurrent);
                 this.Invoke(new Action(() => {
                     
-                pictureBox1.Image = ow.weather[0].Icon;
+                pictureBox1.Image = owCurrent.weather[0].Icon;
 
-                label22.Text = ow.weather[0].description;
+                label22.Text = owCurrent.weather[0].description;
 
-                label21.Text = ow.main.temp.ToString("0.##")+ "℃";
+                label21.Text = owCurrent.main.temp.ToString("0.##")+ "℃";
 
-                label23.Text = ow.wind.speed.ToString();
+                label23.Text = owCurrent.wind.speed.ToString();
 
-                label32.Text = ow.main.humidity.ToString();
+                label32.Text = owCurrent.main.humidity.ToString();
 
-                label24.Text = ((int)ow.main.pressure).ToString();
+                label24.Text = ((int)owCurrent.main.pressure).ToString();
 
-                label18.Text = ow.name.ToString();
+                label18.Text = owCurrent.name.ToString();
                 }));
             }
             else

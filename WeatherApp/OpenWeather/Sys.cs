@@ -19,5 +19,7 @@ namespace WeatherApp.OpenWeather
         public double sunrise;
 
         public double sunset;
+
+        public char pod;
     }
 }
