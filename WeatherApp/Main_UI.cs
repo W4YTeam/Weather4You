@@ -15,8 +15,8 @@ namespace WeatherApp
 {
     public partial class Main_UI : Form
     {
-        private static int[] weather = new int[8] {1, 2, 3, 4, 5, 6, 7, 8 };
-        private static int[] time = new int[8] {0, 3 ,6, 9, 12, 15, 16, 19 };
+        private static int[] weather = new int[9] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        private static int[] time = new int[9] {0, 3 ,6, 9, 12, 15, 18, 21, 24};
         private static string city;
         private static string city_old;
         private static bool chart_builded = false;
@@ -651,6 +651,8 @@ namespace WeatherApp
 
                 OpenWeather.OpenWeather ow = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(answer);
 
+                weather = DataHendler.GetArray(owForecast, 9);
+
                 pictureBox1.Image = ow.weather[0].Icon;
 
                 label22.Text = ow.weather[0].description;
@@ -769,6 +771,8 @@ namespace WeatherApp
                 GetInfoFromUrl.SetInf(todayUrlPt1 + town + todayUrlPt3, out owCurrent);
 
                 GetInfoFromUrl.SetInf(forecastUrlPt1 + town + forecastUrlPt3, out owForecast);
+
+                weather = DataHendler.GetArray(owForecast, 9);
 
                 this.Invoke(new Action(() => {
                     
