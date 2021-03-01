@@ -850,7 +850,7 @@ namespace WeatherApp
                     chart1.Series["Погода"].Points.Clear();
                     for (int i = 0, j = 0; j < 8; i++, j++)
                     {
-                        chart1.Series["Погода"].Points.AddXY(time[j], weather[i]);
+                        chart1.Series["Погода"].Points.AddXY(weather[i], time[j]);
                     }
                     chart_builded = true;
                     city_old = city;
