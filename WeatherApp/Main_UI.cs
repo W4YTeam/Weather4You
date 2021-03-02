@@ -15,14 +15,12 @@ namespace WeatherApp
 {
     public partial class Main_UI : Form
     {
-        private static int[] weather = new int[9] {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        private static int[] time = new int[9] {0, 3 ,6, 9, 12, 15, 18, 21, 24};
+        private static int[] weather = new int[9] {1, 2, 3, 4, 5, 6, 7, 8, 9};//test
+        private static int[] time = new int[8] {0, 3 ,6, 9, 12, 15, 18, 21};//test
         private static string city;
         private static string city_old;
         private static bool chart_builded = false;
         private static string input_data;
-        private static string second_time;
-        private static string second_data;
 
         OpenWeather.OpenWeather owCurrent;
 
@@ -651,7 +649,9 @@ namespace WeatherApp
 
                 OpenWeather.OpenWeather ow = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(answer);
 
-                weather = DataHendler.GetArray(owForecast, 9);
+                weather = DataHendler.GetArrayTemp(owForecast, 9);// - масив для температуры
+
+                time = DataHendler.GetArrayData(owForecast, 8);// - масив для времени
 
                 pictureBox1.Image = ow.weather[0].Icon;
 
@@ -667,17 +667,17 @@ namespace WeatherApp
 
                 label18.Text = ow.name.ToString();
 
-                split_data(owForecast.list[0].dt_txt);
-                label61.Text = second_data;
+                
+                label61.Text = DataHendler.SplitDataData(owForecast.list[0].dt_txt);
 
-                split_data(owForecast.list[8].dt_txt);
-                label49.Text = second_data;
+                
+                label49.Text = DataHendler.SplitDataData(owForecast.list[8].dt_txt);
 
-                split_data(owForecast.list[16].dt_txt);
-                label33.Text = second_data;
+                
+                label33.Text = DataHendler.SplitDataData(owForecast.list[16].dt_txt);
 
-                split_data(owForecast.list[24].dt_txt);
-                label43.Text = second_data;
+                
+                label43.Text = DataHendler.SplitDataData(owForecast.list[24].dt_txt);
 
                 label28.Text = owForecast.list[8].wind.speed.ToString();
 
@@ -755,6 +755,7 @@ namespace WeatherApp
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                city = textBox1.Text;
                 await Task.Run(() => ShowInf(textBox1.Text)); 
 
                 textBox1.Text = "";
@@ -772,10 +773,22 @@ namespace WeatherApp
 
                 GetInfoFromUrl.SetInf(forecastUrlPt1 + town + forecastUrlPt3, out owForecast);
 
-                weather = DataHendler.GetArray(owForecast, 9);
-
                 this.Invoke(new Action(() => {
-                    
+                    weather = DataHendler.GetArrayTemp(owForecast, 9);//Масив погоды
+
+                    time = DataHendler.GetArrayData(owForecast, 8);//Маисв даты
+
+                    if (chart_builded == false || city_old != city)
+                    {
+                        chart1.Series["Погода"].Points.Clear();
+                        for (int i = 0, j = 0; j < 8; i++, j++)
+                        {
+                            chart1.Series["Погода"].Points.AddXY(weather[i], time[j]);
+                        }
+                        chart_builded = true;
+                        city_old = city;
+                    }
+
                     pictureBox1.Image = owCurrent.weather[0].Icon;
 
                     label22.Text = owCurrent.weather[0].description;
@@ -790,17 +803,17 @@ namespace WeatherApp
 
                     label18.Text = owCurrent.name.ToString();
 
-                    split_data(owForecast.list[0].dt_txt);
-                    label61.Text = second_data;
+                    
+                    label61.Text = DataHendler.SplitDataData(owForecast.list[0].dt_txt);
 
-                    split_data(owForecast.list[8].dt_txt);
-                    label49.Text = second_data;
+                    
+                    label49.Text = DataHendler.SplitDataData(owForecast.list[8].dt_txt);
 
-                    split_data(owForecast.list[16].dt_txt);
-                    label33.Text = second_data;
+                    
+                    label33.Text = DataHendler.SplitDataData(owForecast.list[16].dt_txt);
 
-                    split_data(owForecast.list[24].dt_txt);
-                    label43.Text = second_data;
+                    
+                    label43.Text = DataHendler.SplitDataData(owForecast.list[24].dt_txt);
 
                     label28.Text = owForecast.list[8].wind.speed.ToString();
 
@@ -868,13 +881,6 @@ namespace WeatherApp
                 label3.Location = new System.Drawing.Point(671, -3);
                 this.Show();
             }
-        }
-
-        private void split_data(string input)
-        {
-            string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            second_data = splited_input[0];
-            second_time = splited_input[1];
         }
 
         private void label48_MouseEnter(object sender, EventArgs e)
