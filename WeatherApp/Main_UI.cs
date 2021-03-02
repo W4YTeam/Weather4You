@@ -756,8 +756,9 @@ namespace WeatherApp
             if (e.KeyChar == (char)Keys.Enter)
             {
                 city = textBox1.Text;
-                await Task.Run(() => ShowInf(textBox1.Text)); 
+                await Task.Run(() => ShowInf(textBox1.Text));
 
+                label16.Text = "Города Украины";
                 textBox1.Text = "";
             }
         }
