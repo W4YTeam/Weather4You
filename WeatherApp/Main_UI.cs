@@ -15,8 +15,8 @@ namespace WeatherApp
 {
     public partial class Main_UI : Form
     {
-        private static int[] weather = new int[9] {1, 2, 3, 4, 5, 6, 7, 8, 9};//test
-        private static int[] time = new int[8] {0, 3 ,6, 9, 12, 15, 18, 21};//test
+        private static int[] weather = new int[9];//test
+        private static string[] data = new string[9];
         private static string city;
         private static string city_old;
         private static bool chart_builded = false;
@@ -651,7 +651,7 @@ namespace WeatherApp
 
                 weather = DataHendler.GetArrayTemp(owForecast, 9);// - масив для температуры
 
-                time = DataHendler.GetArrayData(owForecast, 8);// - масив для времени
+                data = DataHendler.GetArrayData(owForecast, 9);// - масив для времени
 
                 pictureBox1.Image = ow.weather[0].Icon;
 
@@ -777,14 +777,14 @@ namespace WeatherApp
                 this.Invoke(new Action(() => {
                     weather = DataHendler.GetArrayTemp(owForecast, 9);//Масив погоды
 
-                    time = DataHendler.GetArrayData(owForecast, 8);//Маисв даты
+                    data = DataHendler.GetArrayData(owForecast, 9);//Маисв даты
 
                     if (chart_builded == false || city_old != city)
                     {
                         chart1.Series["Погода"].Points.Clear();
-                        for (int i = 0, j = 0; j < 8; i++, j++)
+                        for (int i = 0, j = 0; j < 9; i++, j++)
                         {
-                            chart1.Series["Погода"].Points.AddXY(weather[i], time[j]);
+                            chart1.Series["Погода"].Points.AddXY(data[j],weather[i]);
                         }
                         chart_builded = true;
                         city_old = city;
@@ -866,9 +866,9 @@ namespace WeatherApp
                 if (chart_builded == false || city_old != city)
                 {
                     chart1.Series["Погода"].Points.Clear();
-                    for (int i = 0, j = 0; j < 8; i++, j++)
+                    for (int i = 0, j = 0; j < 9; i++, j++)
                     {
-                        chart1.Series["Погода"].Points.AddXY(weather[i], time[j]);
+                        chart1.Series["Погода"].Points.AddXY( data[j],weather[i]);
                     }
                     chart_builded = true;
                     city_old = city;

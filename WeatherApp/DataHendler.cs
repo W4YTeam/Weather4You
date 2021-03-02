@@ -8,42 +8,40 @@ namespace WeatherApp
 {
     class DataHendler
     {
-        public static int[] GetArrayTemp(OpenWeatherForecast.OpenWeatherForecast weather,int size)
+        public static int[] GetArrayTemp(OpenWeatherForecast.OpenWeatherForecast weath,int size)
         {
 
             int[] masive = new int[size];
 
             for(int i = 0; i < size; i++)
             {
-                masive[i] =  (int)weather.list[i].main.temp;
+                masive[i] =  (int)weath.list[i].main.temp;
             }
 
             return masive;
         }
-        public static int[] GetArrayData(OpenWeatherForecast.OpenWeatherForecast weather,int size)
+        public static string[] GetArrayData(OpenWeatherForecast.OpenWeatherForecast weath,int size)
         {
-            int[] masive = new int[size];
-
-            int numebers; 
+            string[] masive = new string[size];
 
             for (int i = 0; i < size; i++)
             {
-                numebers = Convert.ToInt32(new String(SplitDataTime(weather.list[i].dt_txt).Where(Char.IsDigit).ToArray()));
+                //numebers = Convert.ToInt32(new String(SplitDataTime(weather.list[i].dt_txt).Where(Char.IsDigit).ToArray()));
 
-                masive[i] = numebers;
+                masive[i] = weath.list[i].dt_txt;
             }
 
 
             return masive;
         }
-        public static string SplitDataTime(string input)
+       /* public static string SplitDataTime(string input)
         {
             string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string secondTime = splited_input[1];
             string[] splited = secondTime.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
             string time = splited[0];
             return time;
-        }
+        }*/
         public static string SplitDataData(string input)
         {
             string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
