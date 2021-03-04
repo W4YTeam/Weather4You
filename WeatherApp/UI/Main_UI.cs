@@ -20,7 +20,6 @@ namespace WeatherApp
         private static string city;
         private static string city_old;
         private static bool chart_builded = false;
-        private static string input_data;
 
         OpenWeather.OpenWeather owCurrent;
 
