@@ -27,8 +27,6 @@ namespace WeatherApp
 
             for (int i = 0; i < size; i++)
             {
-                //numebers = Convert.ToInt32(new String(SplitDataTime(weather.list[i].dt_txt).Where(Char.IsDigit).ToArray()));
-
                 masive[i] = weath.list[i].dt_txt;
             }
 
@@ -41,13 +39,18 @@ namespace WeatherApp
 
             for (int i = 0; i < size; i++)
             {
-                //numebers = Convert.ToInt32(new String(SplitDataTime(weather.list[i].dt_txt).Where(Char.IsDigit).ToArray()));
-
                 masive[i] = weath.list[i].weather[0].Icon;
             }
 
 
             return masive;
+        }
+        public static string SplitDataData(string input)
+        {
+            string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string secondData = splited_input[0];
+            
+            return secondData;
         }
         /* public static string SplitDataTime(string input)
          {
@@ -57,12 +60,5 @@ namespace WeatherApp
              string time = splited[0];
              return time;
          }*/
-        public static string SplitDataData(string input)
-        {
-            string[] splited_input = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            string secondData = splited_input[0];
-            
-            return secondData;
-        }
     }
 }
