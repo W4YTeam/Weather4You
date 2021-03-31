@@ -30,9 +30,9 @@ namespace WeatherApp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_UI));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
@@ -123,6 +123,15 @@ namespace WeatherApp
             this.panel21 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label61 = new System.Windows.Forms.Label();
+            this.ptBoxa1 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa2 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa3 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa4 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa5 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa6 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa7 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa8 = new System.Windows.Forms.PictureBox();
+            this.ptBoxa9 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -150,6 +159,15 @@ namespace WeatherApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa9)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -1303,6 +1321,15 @@ namespace WeatherApp
             // 
             // panel21
             // 
+            this.panel21.Controls.Add(this.ptBoxa9);
+            this.panel21.Controls.Add(this.ptBoxa8);
+            this.panel21.Controls.Add(this.ptBoxa7);
+            this.panel21.Controls.Add(this.ptBoxa6);
+            this.panel21.Controls.Add(this.ptBoxa5);
+            this.panel21.Controls.Add(this.ptBoxa4);
+            this.panel21.Controls.Add(this.ptBoxa3);
+            this.panel21.Controls.Add(this.ptBoxa2);
+            this.panel21.Controls.Add(this.ptBoxa1);
             this.panel21.Controls.Add(this.chart1);
             this.panel21.Location = new System.Drawing.Point(1016, 39);
             this.panel21.Margin = new System.Windows.Forms.Padding(4);
@@ -1318,50 +1345,50 @@ namespace WeatherApp
             this.chart1.BorderSkin.BackImageTransparentColor = System.Drawing.Color.Yellow;
             this.chart1.BorderSkin.BorderColor = System.Drawing.Color.BlanchedAlmond;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(186)))));
-            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisX.MinorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(78)))), ((int)(((byte)(122)))));
-            chartArea1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(78)))), ((int)(((byte)(122)))));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            legend1.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            legend1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            legend1.HeaderSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            legend1.ItemColumnSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            legend1.Name = "Legend1";
-            legend1.TitleBackColor = System.Drawing.Color.Aqua;
-            legend1.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            legend1.TitleSeparatorColor = System.Drawing.Color.BlanchedAlmond;
-            this.chart1.Legends.Add(legend1);
+            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(186)))));
+            chartArea3.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisX.MinorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisX.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.AxisY.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(78)))), ((int)(((byte)(122)))));
+            chartArea3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(78)))), ((int)(((byte)(122)))));
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            legend3.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            legend3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            legend3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            legend3.HeaderSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            legend3.ItemColumnSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            legend3.Name = "Legend1";
+            legend3.TitleBackColor = System.Drawing.Color.Aqua;
+            legend3.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            legend3.TitleSeparatorColor = System.Drawing.Color.BlanchedAlmond;
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(16, 12);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            series1.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Погода";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series1);
+            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            series3.LabelBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            series3.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(210)))), ((int)(((byte)(233)))));
+            series3.Legend = "Legend1";
+            series3.Name = "Погода";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(748, 683);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1377,6 +1404,96 @@ namespace WeatherApp
             this.label61.Size = new System.Drawing.Size(45, 36);
             this.label61.TabIndex = 25;
             this.label61.Text = "---";
+            // 
+            // ptBoxa1
+            // 
+            this.ptBoxa1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa1.Location = new System.Drawing.Point(120, 18);
+            this.ptBoxa1.Name = "ptBoxa1";
+            this.ptBoxa1.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa1.TabIndex = 1;
+            this.ptBoxa1.TabStop = false;
+            // 
+            // ptBoxa2
+            // 
+            this.ptBoxa2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa2.Location = new System.Drawing.Point(169, 18);
+            this.ptBoxa2.Name = "ptBoxa2";
+            this.ptBoxa2.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa2.TabIndex = 2;
+            this.ptBoxa2.TabStop = false;
+            // 
+            // ptBoxa3
+            // 
+            this.ptBoxa3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa3.Location = new System.Drawing.Point(220, 18);
+            this.ptBoxa3.Name = "ptBoxa3";
+            this.ptBoxa3.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa3.TabIndex = 3;
+            this.ptBoxa3.TabStop = false;
+            // 
+            // ptBoxa4
+            // 
+            this.ptBoxa4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa4.Location = new System.Drawing.Point(268, 18);
+            this.ptBoxa4.Name = "ptBoxa4";
+            this.ptBoxa4.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa4.TabIndex = 4;
+            this.ptBoxa4.TabStop = false;
+            // 
+            // ptBoxa5
+            // 
+            this.ptBoxa5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa5.Location = new System.Drawing.Point(318, 18);
+            this.ptBoxa5.Name = "ptBoxa5";
+            this.ptBoxa5.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa5.TabIndex = 5;
+            this.ptBoxa5.TabStop = false;
+            // 
+            // ptBoxa6
+            // 
+            this.ptBoxa6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa6.Location = new System.Drawing.Point(367, 18);
+            this.ptBoxa6.Name = "ptBoxa6";
+            this.ptBoxa6.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa6.TabIndex = 6;
+            this.ptBoxa6.TabStop = false;
+            // 
+            // ptBoxa7
+            // 
+            this.ptBoxa7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa7.Location = new System.Drawing.Point(418, 18);
+            this.ptBoxa7.Name = "ptBoxa7";
+            this.ptBoxa7.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa7.TabIndex = 7;
+            this.ptBoxa7.TabStop = false;
+            // 
+            // ptBoxa8
+            // 
+            this.ptBoxa8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa8.Location = new System.Drawing.Point(468, 18);
+            this.ptBoxa8.Name = "ptBoxa8";
+            this.ptBoxa8.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa8.TabIndex = 8;
+            this.ptBoxa8.TabStop = false;
+            // 
+            // ptBoxa9
+            // 
+            this.ptBoxa9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(131)))), ((int)(((byte)(186)))));
+            this.ptBoxa9.Location = new System.Drawing.Point(520, 18);
+            this.ptBoxa9.Name = "ptBoxa9";
+            this.ptBoxa9.Size = new System.Drawing.Size(36, 26);
+            this.ptBoxa9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptBoxa9.TabIndex = 9;
+            this.ptBoxa9.TabStop = false;
             // 
             // Main_UI
             // 
@@ -1456,6 +1573,15 @@ namespace WeatherApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptBoxa9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1553,5 +1679,14 @@ namespace WeatherApp
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.PictureBox ptBoxa2;
+        private System.Windows.Forms.PictureBox ptBoxa1;
+        private System.Windows.Forms.PictureBox ptBoxa9;
+        private System.Windows.Forms.PictureBox ptBoxa8;
+        private System.Windows.Forms.PictureBox ptBoxa7;
+        private System.Windows.Forms.PictureBox ptBoxa6;
+        private System.Windows.Forms.PictureBox ptBoxa5;
+        private System.Windows.Forms.PictureBox ptBoxa4;
+        private System.Windows.Forms.PictureBox ptBoxa3;
     }
 }

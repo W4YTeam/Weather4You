@@ -17,6 +17,7 @@ namespace WeatherApp
     {
         private static int[] weather = new int[9];//test
         private static string[] data = new string[9];
+        private static Image[] images = new Image[9];
         private static string city;
         private static string city_old;
         private static bool chart_builded = false;
@@ -774,12 +775,15 @@ namespace WeatherApp
                 GetInfoFromUrl.SetInf(forecastUrlPt1 + town + forecastUrlPt3, out owForecast);
 
                 this.Invoke(new Action(() => {
+                    images = DataHendler.GetArrayImg(owForecast, 9);
+
                     weather = DataHendler.GetArrayTemp(owForecast, 9);//Масив погоды
 
                     data = DataHendler.GetArrayData(owForecast, 9);//Маисв даты
 
                     if (chart_builded == false || city_old != city)
                     {
+
                         chart1.Series["Погода"].Points.Clear();
                         for (int i = 0, j = 0; j < 9; i++, j++)
                         {
@@ -787,6 +791,15 @@ namespace WeatherApp
                         }
                         chart_builded = true;
                         city_old = city;
+                        ptBoxa1.Image = images[0];
+                        ptBoxa2.Image = images[1];
+                        ptBoxa3.Image = images[2];
+                        ptBoxa4.Image = images[3];
+                        ptBoxa5.Image = images[4];
+                        ptBoxa6.Image = images[5];
+                        ptBoxa7.Image = images[6];
+                        ptBoxa8.Image = images[7];
+                        ptBoxa9.Image = images[8];
                     }
 
                     pictureBox1.Image = owCurrent.weather[0].Icon;
@@ -852,7 +865,7 @@ namespace WeatherApp
 
         private void label48_Click(object sender, EventArgs e)
         {
-            
+            images = DataHendler.GetArrayImg(owForecast, 9);
             Size old = new Size(739, 622);
             Size s_new = new Size(1360, 622);
 
@@ -864,6 +877,7 @@ namespace WeatherApp
                 label3.Location = new System.Drawing.Point(1294, -3);
                 if (chart_builded == false || city_old != city)
                 {
+                    
                     chart1.Series["Погода"].Points.Clear();
                     for (int i = 0, j = 0; j < 9; i++, j++)
                     {
@@ -871,15 +885,24 @@ namespace WeatherApp
                     }
                     chart_builded = true;
                     city_old = city;
+                    ptBoxa1.Image = images[0];
+                    ptBoxa2.Image = images[1];
+                    ptBoxa3.Image = images[2];
+                    ptBoxa4.Image = images[3];
+                    ptBoxa5.Image = images[4];
+                    ptBoxa6.Image = images[5];
+                    ptBoxa7.Image = images[6];
+                    ptBoxa8.Image = images[7];
+                    ptBoxa9.Image = images[8];
                 }
-                this.Show();
+                //this.Show();
             }
             else
             {
                 this.Size = old;
                 label2.Location = new System.Drawing.Point(703, -3);
                 label3.Location = new System.Drawing.Point(671, -3);
-                this.Show();
+                //this.Show();
             }
         }
 
