@@ -865,6 +865,7 @@ namespace WeatherApp
 
         private void label48_Click(object sender, EventArgs e)
         {
+
             images = DataHendler.GetArrayImg(owForecast, 9);
             Size old = new Size(739, 622);
             Size s_new = new Size(1360, 622);
@@ -877,11 +878,11 @@ namespace WeatherApp
                 label3.Location = new System.Drawing.Point(1294, -3);
                 if (chart_builded == false || city_old != city)
                 {
-                    
+
                     chart1.Series["Погода"].Points.Clear();
                     for (int i = 0, j = 0; j < 9; i++, j++)
                     {
-                        chart1.Series["Погода"].Points.AddXY( data[j],weather[i]);
+                        chart1.Series["Погода"].Points.AddXY(data[j], weather[i]);
                     }
                     chart_builded = true;
                     city_old = city;
@@ -902,7 +903,7 @@ namespace WeatherApp
                 this.Size = old;
                 label2.Location = new System.Drawing.Point(703, -3);
                 label3.Location = new System.Drawing.Point(671, -3);
-                //this.Show();
+            //this.Show();
             }
         }
 
