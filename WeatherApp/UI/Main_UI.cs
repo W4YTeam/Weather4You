@@ -51,7 +51,7 @@ namespace WeatherApp
         {
             panel1.BringToFront();
             Size a = new Size(170, 484);
-            Size b = new Size(170, 40);
+            Size b = new Size(170, 38);
             if (panel.Size == a)
             {
                 panel.Size = b;
@@ -62,7 +62,7 @@ namespace WeatherApp
         {
             city = city_name;
             await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
+            Size a = new Size(170, 38);
             panel1.Size = a;
             label16.Text = label.Text;
         }
@@ -140,12 +140,12 @@ namespace WeatherApp
         //
         private void label9_Click(object sender, EventArgs e)
         {
-            For_click(label9, "Vinnytsa");
+            For_click(label9, "Vinnytsia");
         }
 
         private void panel9_Click(object sender, EventArgs e)
         {
-            For_click(label9, "Vinnytsa");
+            For_click(label9, "Vinnytsia");
         }
         //
         private void label10_Click(object sender, EventArgs e)
