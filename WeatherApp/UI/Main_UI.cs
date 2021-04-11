@@ -47,263 +47,165 @@ namespace WeatherApp
         {
             InitializeComponent();
         }
-        #region Panel2 and it's components
-        private void panel2_Click(object sender, EventArgs e)
+        private void For_Main_panel_click(Panel panel)
         {
             panel1.BringToFront();
             Size a = new Size(170, 484);
             Size b = new Size(170, 40);
-            if (panel1.Size == a)
+            if (panel.Size == a)
             {
-                panel1.Size = b;
+                panel.Size = b;
             }
-            else panel1.Size = a;
+            else panel.Size = a;
+        }
+        private async void For_click( Label label, string city_name)
+        {
+            city = city_name;
+            await Task.Run(() => ShowInf(city));
+            Size a = new Size(170, 40);
+            panel1.Size = a;
+            label16.Text = label.Text;
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            For_Main_panel_click(panel1);
         }
 
         private void label16_Click(object sender, EventArgs e)
         {
-            panel1.BringToFront();
-            Size a = new Size(170, 484);
-            Size b = new Size(170, 40);
-            if (panel1.Size == a)
-            {
-                panel1.Size = b;
-            }
-            else panel1.Size = a;
+            For_Main_panel_click(panel1);
         }
-        //
-        private async void panel3_Click(object sender, EventArgs e)
+        
+
+        private  void panel3_Click(object sender, EventArgs e)
         {
-            city = "Kyiv";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label1.Text;
+            For_click(label1, "Kyiv");    
         }
 
-        private async void label1_Click(object sender, EventArgs e)
+        private  void label1_Click(object sender, EventArgs e)
         {
-            city = "Kyiv";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label1.Text;
+            For_click(label1, "Kyiv");
         }
         //
-        private async void panel4_Click(object sender, EventArgs e)
+        private  void panel4_Click(object sender, EventArgs e)
         {
-            city = "Lviv";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label4.Text;
+            For_click(label4, "Lviv");
         }
 
-        private async void label4_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            city = "Lviv";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label4.Text;
+            For_click(label4, "Lviv");
         }
         //
-        private async void label5_Click(object sender, EventArgs e)
+        private  void label5_Click(object sender, EventArgs e)
         {
-            city = "Odessa";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label5.Text;
+            For_click(label5, "Odessa");
         }
 
-        private async void panel5_Click(object sender, EventArgs e)
+        private  void panel5_Click(object sender, EventArgs e)
         {
-            city = "Odessa";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label5.Text;
+            For_click(label5, "Odessa");
         }
         //
-        private async void label6_Click(object sender, EventArgs e)
+        private  void label6_Click(object sender, EventArgs e)
         {
-            city = "Herson";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label6.Text;
+            For_click(label6, "Herson");
         }
 
-        private async void panel6_Click(object sender, EventArgs e)
+        private  void panel6_Click(object sender, EventArgs e)
         {
-            city = "Herson";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label6.Text;
+            For_click(label6, "Herson");
         }
         //
-        private async void label7_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
-            city = "Хмельницкий";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label7.Text;
+            For_click(label7, "Khmelnytskyi");
         }
 
-        private async void panel7_Click(object sender, EventArgs e)
+        private void panel7_Click(object sender, EventArgs e)
         {
-            city = "Хмельницкий";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label7.Text;
+            For_click(label7, "Khmelnytskyi");
         }
         //
-        private async void label8_Click(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
         {
-            city = "Kharkiv";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label8.Text;
+            For_click(label8, "Kharkiv");
         }
 
-        private async void panel8_Click(object sender, EventArgs e)
+        private void panel8_Click(object sender, EventArgs e)
         {
-            city = "Kharkiv";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label8.Text;
+            For_click(label8, "Kharkiv");
         }
         //
-        private async void label9_Click(object sender, EventArgs e)
+        private void label9_Click(object sender, EventArgs e)
         {
-            city = "Vinnytsia";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label9.Text;
+            For_click(label9, "Vinnytsa");
         }
 
-        private async void panel9_Click(object sender, EventArgs e)
+        private void panel9_Click(object sender, EventArgs e)
         {
-            city = "Vinnytsia";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label9.Text;
+            For_click(label9, "Vinnytsa");
         }
         //
-        private async void label10_Click(object sender, EventArgs e)
+        private void label10_Click(object sender, EventArgs e)
         {
-            city = "Uzhhorod";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label10.Text;
+            For_click(label10, "Uzhhorod");
         }
 
-        private async void panel10_Click(object sender, EventArgs e)
+        private void panel10_Click(object sender, EventArgs e)
         {
-            city = "Uzhhorod";
-            await Task.Run(() => ShowInf(city));
-            label16.Text = label10.Text;
-            Size a = new Size(170, 40);
-            panel1.Size = a;
+            For_click(label10, "Uzhhorod");
         }
         //
-        private async void label11_Click(object sender, EventArgs e)
+        private void label11_Click(object sender, EventArgs e)
         {
-            city = "Chernivtsi";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label11.Text;
+            For_click(label11, "Chernivtsi");
         }
 
-        private async void panel11_Click(object sender, EventArgs e)
+        private void panel11_Click(object sender, EventArgs e)
         {
-            city = "Chernivtsi";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label11.Text;
+            For_click(label11, "Chernivtsi");
         }
         //
-        private async void label12_Click(object sender, EventArgs e)
+        private void label12_Click(object sender, EventArgs e)
         {
-            city = "Donetsk";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label12.Text;
+            For_click(label12, "Donetsk");
         }
 
-        private async void panel12_Click(object sender, EventArgs e)
+        private void panel12_Click(object sender, EventArgs e)
         {
-            city = "Donetsk";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label12.Text;
+             For_click(label12, "Donetsk");
         }
         //
-        private async void label13_Click(object sender, EventArgs e)
+        private void label13_Click(object sender, EventArgs e)
         {
-            city = "Poltava";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label13.Text;
+            For_click(label13, "Poltava");
         }
 
-        private async void panel13_Click(object sender, EventArgs e)
+        private void panel13_Click(object sender, EventArgs e)
         {
-            city = "Poltava";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label13.Text;
+            For_click(label13, "Poltava");
         }
         //
-        private async void label14_Click(object sender, EventArgs e)
+        private void label14_Click(object sender, EventArgs e)
         {
-            city = "Sumy";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label14.Text;
+            For_click(label14, "Sumy");
         }
 
-        private async void panel14_Click(object sender, EventArgs e)
+        private void panel14_Click(object sender, EventArgs e)
         {
-            city = "Sumy";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label14.Text;
+            For_click(label14, "Sumy");
         }
         //
-        private async void label15_Click(object sender, EventArgs e)
+        private void label15_Click(object sender, EventArgs e)
         {
-            city = "Днепр";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label15.Text;
+            For_click(label15, "Dnepr");
         }
 
-        private async void panel15_Click(object sender, EventArgs e)
+        private void panel15_Click(object sender, EventArgs e)
         {
-            city = "Днепр";
-            await Task.Run(() => ShowInf(city));
-            Size a = new Size(170, 40);
-            panel1.Size = a;
-            label16.Text = label15.Text;
+            For_click(label15, "Dnepr");
         }
         //
         private void panel2_MouseEnter(object sender, EventArgs e)
@@ -585,7 +487,7 @@ namespace WeatherApp
         {
             panel15.BackColor = Color.FromArgb(94, 131, 186);
         }
-        #endregion
+
         
         private void label2_Click(object sender, EventArgs e)
         {
