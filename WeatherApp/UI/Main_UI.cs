@@ -66,7 +66,7 @@ namespace WeatherApp
             panel1.Size = a;
             label16.Text = label.Text;
         }
-
+        #region panel
         private void panel2_Click(object sender, EventArgs e)
         {
             For_Main_panel_click(panel1);
@@ -519,7 +519,7 @@ namespace WeatherApp
             label3.BackColor = Color.FromArgb(58, 78, 122);
         }
 
-
+        #endregion
 
         private void textBox1_Click(object sender, EventArgs e)
         {
