@@ -762,7 +762,7 @@ namespace WeatherApp
                 }));
             }
             else
-                MessageBox.Show($"Погода не найдена, проверте правильность данных", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Погода не найдена, проверте правильность данных\nили подключение к интернету", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void label48_Click(object sender, EventArgs e)

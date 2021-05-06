@@ -71,7 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter.cs" />
     <Compile Include="GetData\DataHendler.cs" />
+    <Compile Include="ITarget.cs" />
     <Compile Include="URLHandler\GetInfoFromUrl.cs" />
     <Compile Include="UI\Main_UI.cs">
       <SubType>Form</SubType>
