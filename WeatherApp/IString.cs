@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherApp
 {
-    public interface ITarget
+    public interface IString
     {
         string getDataString(string s);
     }

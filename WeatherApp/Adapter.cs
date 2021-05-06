@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace WeatherApp
 {
-    class Adaptee
+    class Adaptee: IString
     {
         private static HttpWebRequest httpWebRequest;
 
         private static HttpWebResponse httpWebResponse;
-        public string GetJsonString(string url)
+        public string getDataString(string url)
         {
             httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 
@@ -34,16 +34,15 @@ namespace WeatherApp
             return answer;
         }
     }
-    class Adapter : ITarget
+    class Adapter
     {
-        private readonly Adaptee adaptee;
-        public Adapter(Adaptee adaptee)
+       public string GetData(IString target,string str)
         {
-            this.adaptee = adaptee;
+            return target.getDataString(str);
         }
-        public string getDataString(string url)
-        {
-            return adaptee.GetJsonString(url);
-        }
+    }
+    public interface IStoka
+    {
+        string getString(string s);
     }
 }

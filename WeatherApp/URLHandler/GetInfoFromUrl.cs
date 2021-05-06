@@ -10,20 +10,20 @@ namespace WeatherApp
 {
     class GetInfoFromUrl
     {
-        static Adaptee adaptee = new Adaptee();
+        static Adapter adapter = new Adapter(); 
 
         public static void SetInf(string originUrl, out OpenWeather.OpenWeather weather)
         {
-            
-            ITarget target = new Adapter(adaptee);
-            weather = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(target.getDataString(originUrl));
+
+            Adaptee adaptee = new Adaptee();
+            weather = JsonConvert.DeserializeObject<OpenWeather.OpenWeather>(adapter.GetData(adaptee,originUrl));
             
         }
         public static void SetInf(string originUrl, out OpenWeatherForecast.OpenWeatherForecast weather)
         {
-            
-            ITarget target = new Adapter(adaptee);
-            weather = JsonConvert.DeserializeObject<OpenWeatherForecast.OpenWeatherForecast>(target.getDataString(originUrl));
+
+            Adaptee adaptee = new Adaptee();
+            weather = JsonConvert.DeserializeObject<OpenWeatherForecast.OpenWeatherForecast>(adapter.GetData(adaptee, originUrl));
 
         }
        
